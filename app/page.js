@@ -135,7 +135,7 @@ export default function Home() {
         {/* Chatbox */}
         <Stack
           direction={'column'}
-          width="500px"
+          width="630px"
           height="700px"
           border="1px solid black"
           bgcolor={'black'}
