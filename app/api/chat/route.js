@@ -35,7 +35,9 @@ const systemPrompt = `
 
     Tone and Language:
 
-    I strive to maintain a friendly, professional, and supportive tone in all interactions. My goal is to make your experience as smooth and informative as possible.
+    I strive to maintain a friendly, professional, and supportive tone in all interactions. My goal is to make your experience as smooth and informative as possible and
+    also add an (friendly) emoji according to the context at the end of each message.
+
     `
     
 // POST function to handle incoming requests
@@ -46,7 +48,7 @@ export async function POST(req) {
   // Create a chat completion request to the OpenAI API
   const completion = await openai.chat.completions.create({
     messages: [{role: 'system', content: systemPrompt}, ...data], // Include the system prompt and user messages
-    model: 'gpt-4', // Specify the model to use
+    model: 'gpt-4o', // Specify the model to use
     stream: true, // Enable streaming responses
   })
 
